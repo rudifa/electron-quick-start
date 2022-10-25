@@ -1,3 +1,9 @@
 /* styles.css */
 
 /* Add styles here to customize the appearance of your app */
+
+.div-mp {
+  padding: 20px 30px;
+  margin: 10px 20px;
+  border: 1px solid #6599b1;
+}
