@@ -23,14 +23,29 @@
       <span id="chrome-version"></span>, and Electron
       <span id="electron-version"></span>.
     </div>
+
+    <!--  set title -->
+
     <div class="div-mp">
       Title: <input id="title" />
-      <button id="btn-set-title" type="button">Set Title</button>
+      <button id="btn-set-title" type="button" class="btn btn-primary">
+        Set the App Title
+      </button>
     </div>
+
+    <!--  load file -->
+
     <div class="div-mp">
-      <button type="button" id="btn-file-path">Select a File</button>
-      File path: <strong id="filePath"></strong>
+      <button type="button" id="btn-file-path" class="btn btn-primary">
+        Load a file
+      </button>
+      File path: <strong id="file-path"></strong>
+
+      <div id="main-content" class="div-mp"></div>
     </div>
+
+    <!--  TODO list  -->
+
     <div class="div-mp">Current value: <strong id="counter">0</strong></div>
     <div class="div-mp">
       <div class="container">
@@ -55,6 +70,7 @@
         </div>
       </div>
     </div>
+
     <!-- You can also require other files to run in this process -->
     <script src="./renderer.js"></script>
   </body>

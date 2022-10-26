@@ -6,6 +6,8 @@
  * to expose Node.js functionality from the main process.
  */
 
+// TODO list
+
 let list = document.getElementById('list');
 let newTask = document.getElementById('newTask');
 let addTask = document.getElementById('addTask');
@@ -18,19 +20,27 @@ addTask.addEventListener('click', () => {
   newTask.value = '';
 });
 
+// select file
+
 const btn = document.getElementById('btn-file-path');
-const filePathElement = document.getElementById('filePath');
+const filePathElement = document.getElementById('file-path');
 
 btn.addEventListener('click', async () => {
-  const filePath = await window.electronAPI.selectFile();
+  const filePathAndData = await window.electronAPI.selectAndLoadFile();
+  const {filePath, data} = filePathAndData;
   filePathElement.innerText = filePath;
+  document.getElementById('main-content').innerText = data.toString();
 });
+
+// set title
 
 const setTitleButton = document.getElementById('btn-set-title');
 const titleInput = document.getElementById('title');
 setTitleButton.addEventListener('click', () => {
   window.electronAPI.setTitle(titleInput.value);
 });
+
+// update counter value displayed in the UI
 
 const counter = document.getElementById('counter');
 window.electronAPI.handleCounter((event, value) => {
@@ -39,3 +49,4 @@ window.electronAPI.handleCounter((event, value) => {
   counter.innerText = newValue;
   event.sender.send('counter-value', newValue);
 });
+
