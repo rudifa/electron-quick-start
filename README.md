@@ -38,3 +38,13 @@ Note: If you're using Linux Bash for Windows, [see this guide](https://www.howto
 ## License
 
 [CC0 1.0 (Public Domain)](LICENSE.md)
+
+<hr>
+
+## Notes rudifa
+
+### A TODO app based on a Twilio tutorial and on Electron IPC tutorial
+
+[An Introduction to Building Desktop Applications with Electron](https://www.twilio.com/blog/an-introduction-to-building-desktop-applications-with-electron)
+
+[Inter-Process Communication](https://www.electronjs.org/docs/latest/tutorial/ipc)
