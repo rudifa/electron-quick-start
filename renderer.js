@@ -26,7 +26,7 @@ const btn = document.getElementById('btn-file-path');
 const filePathElement = document.getElementById('file-path');
 
 btn.addEventListener('click', async () => {
-  const filePathAndData = await window.electronAPI.selectFile();
+  const filePathAndData = await window.electronAPI.selectAndLoadFile();
   const {filePath, data} = filePathAndData;
   filePathElement.innerText = filePath;
   document.getElementById('main-content').innerText = data.toString();

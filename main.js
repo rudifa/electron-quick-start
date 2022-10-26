@@ -64,11 +64,9 @@ async function handleSelectFile() {
   if (canceled) {
     return;
   } else {
-    // here should load the file and return the filepath and teh dat in an object
+    // load the file and pack the filepath and the data in an object
     const data = await openFile(filePaths[0]);
     return {filePath: filePaths[0], data};
-
-    //return filePaths[0];
   }
 }
 
