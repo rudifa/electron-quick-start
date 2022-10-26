@@ -21,6 +21,7 @@ const { contextBridge, ipcRenderer } = require('electron')
 contextBridge.exposeInMainWorld('electronAPI', {
     setTitle: (title) => ipcRenderer.send('set-title', title),
     selectFile: () => ipcRenderer.invoke('dialog:selectFile'),
+    loadFile: (filePath) => ipcRenderer.invoke("channel-load-file", filePath),
     handleCounter: (callback) => ipcRenderer.on('update-counter', callback)
 })
 
